@@ -11,7 +11,9 @@
 <meta property="og:url" content="https://thonkgame.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#24160d">
-<link rel="icon" href="favicon.png">
+<link rel="icon" href="favicon.png" sizes="64x64">
+<link rel="icon" href="icon-192.png" sizes="192x192">
+<link rel="manifest" href="site.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -242,6 +244,13 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"THONK!","url":"https://thonkgame.com/","image":"https://thonkgame.com/assets/og.jpg",
+"description":"A whack-a-monster arcade game for Android: tap the monsters popping out of the holes, never the bombs. Six worlds, world events, bosses with a trick, an Endless mode with a world leaderboard.",
+"genre":["Arcade","Casual","Whack-a-mole"],"gamePlatform":"Android","operatingSystem":"Android","applicationCategory":"Game",
+"publisher":{"@type":"Organization","name":"LM Tech Studio","url":"https://lmtechstudio.com"},
+"author":{"@type":"Organization","name":"LM Tech Studio","url":"https://lmtechstudio.com"}}
+</script>
 </head>
 <body>
 
@@ -258,9 +267,9 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
     </div>
 
     <div class="game" id="game">
-      <div class="board" id="board" aria-label="Mini THONK! board: tap the monsters, not the bombs"></div>
+      <div class="board" id="board" data-nosnippet aria-label="Mini THONK! board: tap the monsters, not the bombs"></div>
       <div class="scorebar">
-        <span class="hint">Go on, try it. Tap the monsters, never the bombs.</span>
+        <span class="hint" data-nosnippet>Go on, try it. Tap the monsters, never the bombs.</span>
         <span>Score <b id="score">0</b></span>
       </div>
     </div>

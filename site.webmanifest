@@ -1,0 +1,19 @@
+{
+ "name": "THONK!",
+ "short_name": "THONK!",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ],
+ "theme_color": "#24160d",
+ "background_color": "#24160d",
+ "display": "standalone"
+}
