@@ -100,12 +100,13 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
   overflow: hidden;
 }
 .hole img {
-  position: absolute; left: 8%; width: 84%; bottom: 14%;
-  transform: translateY(110%); transition: transform .14s ease-out;
+  position: absolute; left: 18%; width: 64%; bottom: 22%;
+  transform: translateY(150%); opacity: 0;   /* fully hidden down in the hole */
+  transition: transform .14s ease-out, opacity .1s;
   pointer-events: none;
 }
-.hole.up img { transform: translateY(0); }
-.hole.hit img { transform: translateY(0) scale(1.15, .8); transition: transform .06s; }
+.hole.up img { transform: translateY(0); opacity: 1; }
+.hole.hit img { transform: translateY(0) scale(1.15, .8); opacity: 1; transition: transform .06s; }
 .pop {
   position: absolute; pointer-events: none; z-index: 5;
   font: 400 2rem/1 var(--display); color: var(--gold);
