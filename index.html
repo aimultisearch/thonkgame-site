@@ -87,7 +87,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
   background: url(assets/board.webp) center / 100% 100% no-repeat;
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5%;
   padding: 10.5%;
-  cursor: url(assets/hammer_cursor.png) 20 12, pointer;
+  cursor: url(assets/hammer_cursor.png) 48 20, pointer;
   touch-action: manipulation;
   user-select: none; -webkit-user-select: none;
   filter: drop-shadow(0 22px 30px rgba(0,0,0,.55));
@@ -105,8 +105,9 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
   transition: transform .14s ease-out, opacity .1s;
   pointer-events: none;
 }
-.hole.up img { transform: translateY(0); opacity: 1; }
-.hole.hit img { transform: translateY(0) scale(1.15, .8); opacity: 1; transition: transform .06s; }
+.hole img { --s: 1; transform-origin: 50% 100%; }   /* --s: per-monster size (wide sprites look small) */
+.hole.up img { transform: translateY(0) scale(var(--s)); opacity: 1; }
+.hole.hit img { transform: translateY(0) scale(calc(var(--s) * 1.15), calc(var(--s) * .8)); opacity: 1; transition: transform .06s; }
 .pop {
   position: absolute; pointer-events: none; z-index: 5;
   font: 400 2rem/1 var(--display); color: var(--gold);
@@ -169,7 +170,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
 .mon { text-align: center; }
 .mon button {
   all: unset; display: block; width: min(150px, 100%); aspect-ratio: 1; margin: 0 auto; position: relative;
-  border-radius: 50%; cursor: url(assets/hammer_cursor.png) 20 12, pointer;
+  border-radius: 50%; cursor: url(assets/hammer_cursor.png) 48 20, pointer;
   background: radial-gradient(ellipse at 50% 72%, #000 0 30%, #1d0f07 44%, transparent 46%);
 }
 .mon button img { position: absolute; inset: 6% 6% 18%; width: 88%; height: 76%; object-fit: contain; }
@@ -335,7 +336,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
   const game = document.getElementById("game");
   const cast = [
     { k: "blob", w: 5, hp: 1, pts: 10 }, { k: "cyclope", w: 3, hp: 2, pts: 25 },
-    { k: "ghost", w: 2, hp: 1, pts: 30 }, { k: "golem", w: 2, hp: 3, pts: 40 },
+    { k: "ghost", w: 2, hp: 1, pts: 30 }, { k: "golem", w: 2, hp: 3, pts: 40, s: 1.3 },
     { k: "bombe", w: 3, bomb: true }, { k: "dore", w: .4, hp: 1, pts: 200 },
   ];
   const total = cast.reduce((s, c) => s + c.w, 0);
@@ -395,6 +396,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
       const m = pick();
       h.mon = m; h.hp = m.hp || 0;
       h.img.src = A + m.k + "_idle1.webp";
+      h.img.style.setProperty("--s", m.s || 1);
       h.el.classList.remove("hit");
       requestAnimationFrame(() => h.el.classList.add("up"));
       h.timer = setTimeout(() => hide(h), m.k === "dore" ? 700 : m.bomb ? 1700 : 1500 + Math.random() * 500);
