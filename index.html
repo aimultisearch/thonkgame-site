@@ -145,6 +145,21 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
 .world h3 { font-size: 1.55rem; color: #fff; }
 .world p { margin: 6px 0 0; font-size: .92rem; line-height: 1.4; color: #e9e1cf; }
 
+.world.locked img { filter: blur(9px) brightness(.35) saturate(.6); transform: scale(1.12); }
+.world.locked h3 { color: var(--cream-dim); }
+.lock {
+  position: absolute; left: 50%; top: 40%; width: 70px; height: 58px; transform: translate(-50%, -50%);
+  background: var(--gold); border-radius: 12px; box-shadow: 0 6px 0 #a16a0e, 0 10px 24px rgba(0,0,0,.5);
+}
+.lock::before {
+  content: ""; position: absolute; left: 50%; bottom: 100%; width: 40px; height: 34px; transform: translateX(-50%);
+  border: 9px solid var(--gold); border-bottom: 0; border-radius: 22px 22px 0 0;
+}
+.lock::after {
+  content: ""; position: absolute; left: 50%; top: 18px; width: 12px; height: 20px; transform: translateX(-50%);
+  background: #5b3a06; border-radius: 6px;
+}
+
 /* ---------- MONSTERS: each one waits in its own hole ---------- */
 .roster {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -161,6 +176,9 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
 .mon h3 { font-size: 1.45rem; margin-top: 8px; }
 .mon p { margin: 4px auto 0; max-width: 26ch; font-size: .95rem; line-height: 1.45; color: var(--cream-dim); }
 .mon.danger h3 { color: #ff8a80; }
+.mon.secret img { filter: brightness(0) drop-shadow(0 0 6px rgba(255,197,49,.45)); }
+.mon.secret h3 { color: var(--cream-dim); }
+.mon.secret button { cursor: default; }
 
 /* ---------- BOSSES: you don't get to see them ---------- */
 .bosses { background: radial-gradient(ellipse at 50% 0%, #3d0d0a, #170704 70%); }
@@ -196,6 +214,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
 .mode img { height: 110px; width: auto; margin-bottom: 14px; }
 .mode h3 { font-size: 1.8rem; color: var(--gold); }
 .mode p { margin: 8px 0 0; color: var(--cream-dim); }
+.mode img.silhouette { filter: brightness(0) drop-shadow(0 0 14px rgba(255,197,49,.55)); }
 
 /* ---------- FOOTER ---------- */
 footer { padding: 70px 0 50px; background: #120b06; text-align: center; color: var(--cream-dim); }
@@ -244,14 +263,14 @@ footer small { display: block; font-size: .85rem; opacity: .75; }
 <section class="worlds">
   <div class="wrap">
     <h2>Six worlds, each with its own weather</h2>
-    <p class="lede">Ten levels per world, a boss at the end, and world events that change the rules for a few seconds: rain puts the bombs out, wind blows your coins away, the lights go off in the caves.</p>
+    <p class="lede">Ten levels per world, a boss at the end, and world events that change the rules for a few seconds. Here are the first two. The rest, you'll have to reach yourself.</p>
     <div class="strip">
       <article class="world"><img src="assets/world1.webp" alt="" loading="lazy"><div class="cap"><h3>Enchanted Forest</h3><p>Wind, falling leaves and a rain that fizzles bombs.</p></div></article>
       <article class="world"><img src="assets/world2.webp" alt="" loading="lazy"><div class="cap"><h3>Crystal Caves</h3><p>Falling rocks, blackouts and monsters frozen in crystal.</p></div></article>
-      <article class="world"><img src="assets/world3.webp" alt="" loading="lazy"><div class="cap"><h3>Mechanical Fortress</h3><p>Spinning gears, slippery oil and power surges.</p></div></article>
-      <article class="world"><img src="assets/world4.webp" alt="" loading="lazy"><div class="cap"><h3>Shadow Temple</h3><p>Scattered holes, a mirror curse and magic runes.</p></div></article>
-      <article class="world"><img src="assets/world5.webp" alt="" loading="lazy"><div class="cap"><h3>Infernal Volcano</h3><p>Rising lava, heat waves and geysers.</p></div></article>
-      <article class="world"><img src="assets/world6.webp" alt="" loading="lazy"><div class="cap"><h3>Golden Kingdom</h3><p>A greedy tax king, Midas's curse and a gold rush.</p></div></article>
+      <article class="world locked"><img src="assets/world3.webp" alt="" loading="lazy"><div class="lock" aria-hidden="true"></div><div class="cap"><h3>???</h3><p>Beat World 2 to find out.</p></div></article>
+      <article class="world locked"><img src="assets/world4.webp" alt="" loading="lazy"><div class="lock" aria-hidden="true"></div><div class="cap"><h3>???</h3><p>Beat World 3 to find out.</p></div></article>
+      <article class="world locked"><img src="assets/world5.webp" alt="" loading="lazy"><div class="lock" aria-hidden="true"></div><div class="cap"><h3>???</h3><p>Beat World 4 to find out.</p></div></article>
+      <article class="world locked"><img src="assets/world6.webp" alt="" loading="lazy"><div class="lock" aria-hidden="true"></div><div class="cap"><h3>???</h3><p>Nobody says what's in World 6.</p></div></article>
     </div>
   </div>
 </section>
@@ -259,7 +278,7 @@ footer small { display: block; font-size: .85rem; opacity: .75; }
 <section class="monsters">
   <div class="wrap">
     <h2>Know your monsters</h2>
-    <p class="lede">Some want to be bonked. Some really, really don't. Tap one to say hello.</p>
+    <p class="lede">Some want to be bonked. Some really, really don't. Tap one to say hello. The others are waiting in later worlds.</p>
     <div class="roster" id="roster"></div>
   </div>
 </section>
@@ -285,7 +304,7 @@ footer small { display: block; font-size: .85rem; opacity: .75; }
     <div class="list">
       <div class="mode"><img src="assets/bombe_death.webp" alt="" loading="lazy"><h3>Endless</h3><p>Waves that never stop. Everyone gets the same Diamond hammer and three hearts, so the world leaderboard is pure skill.</p></div>
       <div class="mode"><img src="assets/dore_idle1.webp" alt="" loading="lazy"><h3>Treasure Room</h3><p>Come back every day for fourteen days and the vault opens: thirty seconds of golden monsters.</p></div>
-      <div class="mode"><img src="assets/mimique_idle1.webp" alt="" loading="lazy"><h3>Secret runners</h3><p>Earn every star in a world and someone very fast shows up on the map. Catch him if you can.</p></div>
+      <div class="mode"><img class="silhouette" src="assets/teleporteur_idle1.webp" alt="" loading="lazy"><h3>Secret runners</h3><p>Rumor says something very fast shows up on the map... if you play well enough.</p></div>
     </div>
   </div>
 </section>
@@ -384,22 +403,21 @@ footer small { display: block; font-size: .85rem; opacity: .75; }
     ["bombe", "Bomb", "DON'T. TAP. THIS. We really cannot stress this enough.", true],
     ["golem", "Golem", "Built like a brick wall. Bring your tapping finger."],
     ["ghost", "Ghost", "Blink and you'll miss it. Here, then poof."],
-    ["casque", "Helmeted", "Hides behind armor like a coward. Wait for it to open up."],
-    ["epineux", "Spiky", "Touch those spikes and YOU take the hit. Wait. For. It.", true],
-    ["teleporteur", "Teleporter", "Hops to another hole every second. Turns green right before."],
-    ["invocateur", "Summoner", "Spawns Blobs nearby, because one monster wasn't enough."],
-    ["bouclier", "Shielder", "Protects its neighbours. How sweet. How annoying."],
-    ["mimique", "Mimic", "Disguised as a coin. Greedy fingers, beware.", true],
-    ["necromancien", "Necromancer", "Brings monsters back. Kill it first, unless you enjoy doing things twice.", true],
-    ["red_bomb", "Reddy Bomb", "The one bomb you MUST smash. Right before it blows.", true],
     ["dore", "Golden", "Super rare, gone in half a second. Smash first, think later."],
+    ["casque", "???", "Waiting in a later world.", false, true],
+    ["epineux", "???", "Waiting in a later world.", false, true],
+    ["teleporteur", "???", "Waiting in a later world.", false, true],
+    ["invocateur", "???", "Waiting in a later world.", false, true],
+    ["bouclier", "???", "Waiting in a later world.", false, true],
+    ["necromancien", "???", "Nobody has seen this one and come back to talk about it.", false, true],
   ];
   const rosterEl = document.getElementById("roster");
-  roster.forEach(([k, name, tip, danger]) => {
+  roster.forEach(([k, name, tip, danger, secret]) => {
     const d = document.createElement("article");
-    d.className = "mon" + (danger ? " danger" : "");
-    d.innerHTML = `<button type="button" aria-label="Bonk the ${name}"><img src="${A}${k}_idle1.webp" alt="" loading="lazy"></button><h3>${name}</h3><p>${tip}</p>`;
+    d.className = "mon" + (danger ? " danger" : "") + (secret ? " secret" : "");
+    d.innerHTML = `<button type="button" aria-label="${secret ? "Unknown monster" : "Bonk the " + name}"><img src="${A}${k}_idle1.webp" alt="" loading="lazy"></button><h3>${name}</h3><p>${tip}</p>`;
     const btn = d.querySelector("button"), img = btn.querySelector("img");
+    if (secret) { btn.disabled = true; rosterEl.appendChild(d); return; }
     btn.addEventListener("click", () => {
       const f = (k === "bombe" || k === "red_bomb") ? "_death" : (k === "mimique" || k === "necromancien") ? "_damaged" : "_hit";
       img.src = A + k + f + ".webp";
