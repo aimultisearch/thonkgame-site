@@ -218,10 +218,16 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
 .mode img.silhouette { filter: brightness(0) drop-shadow(0 0 14px rgba(255,197,49,.55)); }
 
 /* ---------- FOOTER ---------- */
-footer { padding: 70px 0 50px; background: #120b06; text-align: center; color: var(--cream-dim); }
-footer .icon { width: 96px; border-radius: 22px; margin: 0 auto 18px; }
-footer nav { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin: 18px 0; font-weight: 800; }
-footer small { display: block; font-size: .85rem; opacity: .75; }
+.site-foot { padding: 56px 16px 40px; background: #120b06; text-align: center; color: #b9a37d; font-size: .95rem; }
+.site-foot p { margin: 0; }
+.site-foot .by { margin-bottom: 18px; }
+.site-foot .lm { width: 64px; height: auto; margin: 0 auto 18px; display: block; }
+.site-foot .studio { color: var(--cream); font-weight: 800; font-size: 1.05rem; }
+.site-foot .url { color: #d8c49e; text-decoration: none; display: inline-block; margin: 2px 0; }
+.site-foot .url:hover { text-decoration: underline; }
+.site-foot .c { opacity: .8; }
+.site-foot .links { margin-top: 18px; }
+.site-foot .links a { color: var(--gold); white-space: nowrap; }
 
 @media (max-width: 820px) {
   .scorebar { flex-direction: column; align-items: center; gap: 6px; }
@@ -311,11 +317,13 @@ footer small { display: block; font-size: .85rem; opacity: .75; }
 </section>
 </main>
 
-<footer>
-  <img class="icon" src="assets/icon.webp" alt="" width="96" height="96" loading="lazy">
-  <div>THONK! is made in Geneva by <a href="https://lmtechstudio.com">LM Tech Studio</a>.</div>
-  <nav><a href="privacy.html">Privacy policy</a><a href="https://lmtechstudio.com">Contact</a></nav>
-  <small>© 2026 LM Tech Studio. Google Play and the Google Play logo are trademarks of Google LLC.</small>
+<footer class="site-foot">
+  <p class="by">Created by</p>
+  <a href="https://lmtechstudio.com"><img class="lm" src="assets/lm_logo.webp" alt="LM Tech Studio" width="64" height="47"></a>
+  <p class="studio">LM Tech Studio</p>
+  <a class="url" href="https://lmtechstudio.com">www.lmtechstudio.com</a>
+  <p class="c">© 2026 LM Tech Studio</p>
+  <p class="links">© 2026 THONK! · <a href="how-to-play.html">How to play</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Terms &amp; Privacy</a></p>
 </footer>
 
 <script>

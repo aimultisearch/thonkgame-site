@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THONK! — FAQ</title>
+<meta name="description" content="Frequently asked questions about THONK!.">
+<meta name="theme-color" content="#24160d">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --bark: #24160d; --gold: #ffc531; --cream: #fff3d6; --cream-dim: #e3cfa6; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bark); color: var(--cream); font: 500 1.0625rem/1.7 "Nunito", system-ui, sans-serif; }
+main { width: min(720px, 100% - 32px); margin: 0 auto; padding: 40px 0 80px; }
+a { color: var(--gold); }
+:focus-visible { outline: 4px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.back img { width: 200px; height: auto; display: block; }
+h1, h2 { font-family: "Lilita One", system-ui, sans-serif; font-weight: 400; line-height: 1.1; }
+h1 { font-size: clamp(2.2rem, 7vw, 3.2rem); color: var(--gold); margin: 28px 0 6px; }
+h2 { font-size: 1.6rem; color: var(--gold); margin: 40px 0 8px; }
+.date { color: var(--cream-dim); margin: 0 0 28px; }
+p, li { color: var(--cream-dim); }
+strong { color: var(--cream); }
+ul { padding-left: 1.2em; }
+li { margin: 6px 0; }
+.tip { display: flex; gap: 18px; align-items: center; margin: 22px 0; }
+.tip img { width: 84px; height: auto; flex: none; }
+.tip p { margin: 0; }
+details { border-bottom: 2px solid #3d2814; padding: 14px 0; }
+summary { cursor: pointer; font-weight: 800; color: var(--cream); font-size: 1.1rem; list-style: none; padding-right: 30px; position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 4px; top: -2px; font: 400 1.6rem/1 "Lilita One", sans-serif; color: var(--gold); }
+details[open] summary::after { content: "−"; }
+details p { margin: 10px 0 2px; }
+.site-foot { padding: 56px 16px 40px; background: #120b06; text-align: center; color: #b9a37d; font-size: .95rem; }
+.site-foot p { margin: 0; }
+.site-foot .by { margin-bottom: 18px; }
+.site-foot .lm { width: 64px; height: auto; margin: 0 auto 18px; display: block; }
+.site-foot .studio { color: var(--cream); font-weight: 800; font-size: 1.05rem; }
+.site-foot .url { color: #d8c49e; text-decoration: none; display: inline-block; margin: 2px 0; }
+.site-foot .url:hover { text-decoration: underline; }
+.site-foot .c { opacity: .8; }
+.site-foot .links { margin-top: 18px; }
+.site-foot .links a { color: var(--gold); white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="index.html"><img src="assets/logo.webp" alt="THONK! home"></a>
+  <h1>FAQ</h1>
+  <p class="date">Questions people ask. If yours isn't here, contact us through <a href="https://lmtechstudio.com">lmtechstudio.com</a>.</p>
+
+  <details><summary>Is THONK! free?</summary><p>Yes. The game is free to play, with ads and optional purchases. Every hammer and item in the story can be earned by playing. You never have to pay to progress.</p></details>
+  <details><summary>When is it coming out?</summary><p>Soon, on Google Play for Android. This page will have the download link on launch day.</p></details>
+  <details><summary>Is there an iPhone version?</summary><p>Not yet. Android comes first. An iOS version may follow later.</p></details>
+  <details><summary>Do I need an internet connection?</summary><p>You can play without internet. Ads, purchases and the world leaderboard need a connection.</p></details>
+  <details><summary>Why did I fail a level when I still had hearts?</summary><p>To pass a level you need to bonk at least 75% of its monsters. If too many escape, the level is failed even with hearts left. The end screen shows how many you got.</p></details>
+  <details><summary>How do I remove the ads?</summary><p>Buy "No Ads" in the shop. It removes the ads between levels. Reward videos stay available, because those are always your choice (double coins, a revive...).</p></details>
+  <details><summary>I bought something. How do I get it back on a new phone?</summary><p>Open the options and tap "Restore purchases", with the same Google account you used to buy.</p></details>
+  <details><summary>Where is my progress saved?</summary><p>On your phone. Uninstalling the game deletes it, so don't uninstall it if you want to keep your progress.</p></details>
+  <details><summary>How does the Endless leaderboard work?</summary><p>Endless unlocks after World 2. Everyone plays with the same Diamond hammer and three hearts, so the ranking is fair: no purchase changes your score. Sign in to Google Play Games to appear on the world leaderboard.</p></details>
+  <details><summary>The game drains my battery or feels slow.</summary><p>In the options, set Effects to LIGHT. The game also switches by itself if your phone struggles.</p></details>
+</main>
+<footer class="site-foot">
+  <p class="by">Created by</p>
+  <a href="https://lmtechstudio.com"><img class="lm" src="assets/lm_logo.webp" alt="LM Tech Studio" width="64" height="47"></a>
+  <p class="studio">LM Tech Studio</p>
+  <a class="url" href="https://lmtechstudio.com">www.lmtechstudio.com</a>
+  <p class="c">© 2026 LM Tech Studio</p>
+  <p class="links">© 2026 THONK! · <a href="how-to-play.html">How to play</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Terms &amp; Privacy</a></p>
+</footer>
+</body>
+</html>

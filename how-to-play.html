@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THONK! — How to play</title>
+<meta name="description" content="How to play THONK!: tap the monsters, never the bombs, and more.">
+<meta name="theme-color" content="#24160d">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --bark: #24160d; --gold: #ffc531; --cream: #fff3d6; --cream-dim: #e3cfa6; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bark); color: var(--cream); font: 500 1.0625rem/1.7 "Nunito", system-ui, sans-serif; }
+main { width: min(720px, 100% - 32px); margin: 0 auto; padding: 40px 0 80px; }
+a { color: var(--gold); }
+:focus-visible { outline: 4px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.back img { width: 200px; height: auto; display: block; }
+h1, h2 { font-family: "Lilita One", system-ui, sans-serif; font-weight: 400; line-height: 1.1; }
+h1 { font-size: clamp(2.2rem, 7vw, 3.2rem); color: var(--gold); margin: 28px 0 6px; }
+h2 { font-size: 1.6rem; color: var(--gold); margin: 40px 0 8px; }
+.date { color: var(--cream-dim); margin: 0 0 28px; }
+p, li { color: var(--cream-dim); }
+strong { color: var(--cream); }
+ul { padding-left: 1.2em; }
+li { margin: 6px 0; }
+.tip { display: flex; gap: 18px; align-items: center; margin: 22px 0; }
+.tip img { width: 84px; height: auto; flex: none; }
+.tip p { margin: 0; }
+details { border-bottom: 2px solid #3d2814; padding: 14px 0; }
+summary { cursor: pointer; font-weight: 800; color: var(--cream); font-size: 1.1rem; list-style: none; padding-right: 30px; position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 4px; top: -2px; font: 400 1.6rem/1 "Lilita One", sans-serif; color: var(--gold); }
+details[open] summary::after { content: "−"; }
+details p { margin: 10px 0 2px; }
+.site-foot { padding: 56px 16px 40px; background: #120b06; text-align: center; color: #b9a37d; font-size: .95rem; }
+.site-foot p { margin: 0; }
+.site-foot .by { margin-bottom: 18px; }
+.site-foot .lm { width: 64px; height: auto; margin: 0 auto 18px; display: block; }
+.site-foot .studio { color: var(--cream); font-weight: 800; font-size: 1.05rem; }
+.site-foot .url { color: #d8c49e; text-decoration: none; display: inline-block; margin: 2px 0; }
+.site-foot .url:hover { text-decoration: underline; }
+.site-foot .c { opacity: .8; }
+.site-foot .links { margin-top: 18px; }
+.site-foot .links a { color: var(--gold); white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="index.html"><img src="assets/logo.webp" alt="THONK! home"></a>
+  <h1>How to play</h1>
+  <p class="date">Everything you need to know before your first bonk. The rest, the game will teach you.</p>
+
+  <div class="tip"><img src="assets/blob_idle1.webp" alt=""><p><strong>Tap the monsters.</strong> They pop out of the holes and don't stay long. One tap for a Blob, a few more for the tougher ones.</p></div>
+  <div class="tip"><img src="assets/bombe_idle1.webp" alt=""><p><strong>Never tap a bomb.</strong> It explodes and costs you a heart. Leave it alone, it will go away on its own.</p></div>
+  <div class="tip"><img src="assets/heart.webp" alt=""><p><strong>Watch your hearts.</strong> Tapping an empty hole, letting a monster escape or tapping something you shouldn't costs a bit of life. No hearts left, game over.</p></div>
+
+  <h2>Finishing a level</h2>
+  <p>To pass a level, bonk at least <strong>75% of the monsters</strong>. You can make it to the end with hearts left and still fail if too many of them got away.</p>
+
+  <h2>Stars</h2>
+  <ul>
+    <li><strong>1 star</strong>: level cleared.</li>
+    <li><strong>2 stars</strong>: cleared without using an item.</li>
+    <li><strong>3 stars</strong>: no item, and hardly any missed taps.</li>
+  </ul>
+  <p>Stars are worth collecting. That's all we'll say.</p>
+
+  <h2>Combos</h2>
+  <p>Hit monsters one after another without a mistake and your combo grows. A bigger combo means more points and more coins. Reach a combo of <strong>100</strong> and you get a heart back.</p>
+
+  <h2>Coins, hammers and items</h2>
+  <p>Monsters drop coins: tap them to pick them up. Spend them in the shop on <strong>better hammers</strong> (each one hits harder and learns a new trick) and on <strong>items</strong> like potions, shields or a slowdown. Items go in your bag and you use them during a level.</p>
+
+  <h2>World events</h2>
+  <p>Every world has its own weather. A big banner warns you just before it starts, and for a few seconds the rules change. Some events help you, some don't.</p>
+
+  <h2>Bosses</h2>
+  <p>Every tenth level is a boss. Each one has its own trick, and hitting harder is rarely it. Look, think, then bonk.</p>
+
+  <h2>Come back every day</h2>
+  <p>Daily rewards grow over fourteen days. Keep going until the end and you'll find out what's in the vault.</p>
+</main>
+<footer class="site-foot">
+  <p class="by">Created by</p>
+  <a href="https://lmtechstudio.com"><img class="lm" src="assets/lm_logo.webp" alt="LM Tech Studio" width="64" height="47"></a>
+  <p class="studio">LM Tech Studio</p>
+  <a class="url" href="https://lmtechstudio.com">www.lmtechstudio.com</a>
+  <p class="c">© 2026 LM Tech Studio</p>
+  <p class="links">© 2026 THONK! · <a href="how-to-play.html">How to play</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Terms &amp; Privacy</a></p>
+</footer>
+</body>
+</html>
