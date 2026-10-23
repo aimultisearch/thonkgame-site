@@ -428,7 +428,9 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
     d.className = "mon" + (danger ? " danger" : "") + (secret ? " secret" : "");
     d.innerHTML = `<button type="button" aria-label="${secret ? "Unknown monster" : "Bonk the " + name}"><img src="${A}${k}_idle1.webp" alt="" loading="lazy"></button><h3>${name}</h3><p>${tip}</p>`;
     const btn = d.querySelector("button"), img = btn.querySelector("img");
-    if (k === "golem") { img.style.transform = "scale(1.25)"; img.style.transformOrigin = "50% 85%"; }   // wide, flat sprite: looked tiny
+    // some sprites are much wider / thinner than the others: even out their size
+    const SIZE = { golem: 1.25, epineux: 0.8, necromancien: 1.35 };
+    if (SIZE[k]) { img.style.transform = `scale(${SIZE[k]})`; img.style.transformOrigin = "50% 85%"; }
     if (secret) { btn.disabled = true; rosterEl.appendChild(d); return; }
     btn.addEventListener("click", () => {
       const f = (k === "bombe" || k === "red_bomb") ? "_death" : (k === "mimique" || k === "necromancien") ? "_damaged" : "_hit";
