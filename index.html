@@ -448,7 +448,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
     d.innerHTML = `<button type="button" aria-label="${secret ? "Unknown monster" : "Bonk the " + name}"><img src="${A}${k}_idle1.webp" alt="" loading="lazy"></button><h3>${name}</h3><p>${tip}</p>`;
     const btn = d.querySelector("button"), img = btn.querySelector("img");
     // sizes as in the game: same width for all, a few are bigger (golem x1.54, summoner x1.11)
-    const SIZE = { golem: 1.54, invocateur: 1.11 };
+    const SIZE = { golem: 1.54, invocateur: 1.11, bombe: 0.8 };
     if (SIZE[k]) img.style.width = (62 * SIZE[k]).toFixed(1) + "%";
     if (secret) { btn.disabled = true; rosterEl.appendChild(d); return; }
     btn.addEventListener("click", () => {
