@@ -397,7 +397,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
     if (h.hp > 0) {
       h.img.src = A + m.k + "_hit.webp";
       pop("THONK!", x, y);
-      setTimeout(() => { if (h.mon === m) { h.el.classList.remove("hit"); h.img.src = A + m.k + (h.hp * 2 <= m.hp ? "_damaged.webp" : "_idle1.webp"); } }, 140);
+      setTimeout(() => { if (h.mon === m) { h.el.classList.remove("hit"); h.img.src = A + m.k + (h.hp * 2 <= m.hp ? "_damaged.webp" : "_idle1.webp?v=2"); } }, 140);
       return;
     }
     h.img.src = A + m.k + "_death.webp";
@@ -413,7 +413,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
       const h = free[Math.floor(Math.random() * free.length)];
       const m = pick();
       h.mon = m; h.hp = m.hp || 0;
-      h.img.src = A + m.k + "_idle1.webp";
+      h.img.src = A + m.k + "_idle1.webp?v=2";
       h.img.style.setProperty("--s", m.s || 1);
       h.el.classList.remove("hit");
       requestAnimationFrame(() => h.el.classList.add("up"));
@@ -453,7 +453,7 @@ section { padding: clamp(64px, 10vw, 120px) 0; }
     btn.addEventListener("click", () => {
       const f = (k === "bombe" || k === "red_bomb") ? "_death" : (k === "mimique" || k === "necromancien") ? "_damaged" : "_hit";
       img.src = A + k + f + ".webp";
-      setTimeout(() => { img.src = A + k + "_idle1.webp"; }, 700);
+      setTimeout(() => { img.src = A + k + "_idle1.webp?v=2"; }, 700);
     });
     rosterEl.appendChild(d);
   });
